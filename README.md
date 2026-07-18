@@ -3,6 +3,7 @@
 Built at the **TCS AI Hackathon** — a RAG-based assistant that helps answer questions about data pipelines and schemas, using both a fixed knowledge base and whatever files you upload at it (CSV, JSON, Excel, or raw SQL).
 
 The idea started from a simple pain point: when you're designing a data pipeline, you're constantly flipping between company policy docs and your own dataset to check things like "does this column follow our naming convention?" or "what's the schema of this table?" This tool puts both in one chat window.
+<img width="940" height="398" alt="image" src="https://github.com/user-attachments/assets/704d9106-11f1-4201-879a-40c3dcb759a0" />
 
 ## What it actually does
 
@@ -19,8 +20,10 @@ If you ask something totally unrelated to your data or the knowledge base (like 
 **Hybrid retrieval instead of picking one source.** Company docs are static and don't change often, but your uploaded data is temporary and session-specific. Rather than treating them the same, the app runs two separate retrievers — one over the knowledge base, one over your uploaded files — and blends the results using LangChain's `EnsembleRetriever` (60% weight to the knowledge base, 40% to your data). This gave noticeably better answers than dumping everything into one vector store.
 
 **Sessions don't leak into each other.** Each set of uploaded files gets its own isolated ChromaDB vector store, keyed off the uploaded files themselves. So if two people are using the app (or you upload two different datasets), one person's data never bleeds into another's context.
+<img width="1090" height="581" alt="image" src="https://github.com/user-attachments/assets/8f931b9d-77cf-488b-bd30-6ab89cab9548" />
 
 **You can tell where an answer came from.** Every response shows the source chunks it pulled from — tagged as either coming from the knowledge base or your uploaded file — with a small preview so you can double check it.
+<img width="940" height="303" alt="image" src="https://github.com/user-attachments/assets/ea13d57a-f247-42aa-bef6-3d2e27f13700" />
 
 ## Tech stack
 
