@@ -115,9 +115,9 @@ if "kb_vectordb" not in st.session_state:
         kb_chunks = splitter.split_text("\n".join(kb_texts))
 
         kb_embeddings = OpenAIEmbeddings(
-            model="text-embedding-3-small",  
-            openai_api_key="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",  
-            openai_api_base="https://models.inference.ai.azure.com"
+            model=EMBEDDING_MODEL,  
+            openai_api_key=EMBEDDING_API_KEY,  
+            openai_api_base=EMBEDDING_BASE_URL
         )
 
         kb_vectordb = Chroma.from_texts(
