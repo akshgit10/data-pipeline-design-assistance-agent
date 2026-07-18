@@ -1,0 +1,7 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# *
+.env
+user_index/
+kb_index/
+__pycache__/
+token/
