@@ -1,6 +1,6 @@
 # GenAI Agent for Data Pipeline Design Assistance
 
-Built at the **TCS AI Hackathon** — a RAG-based assistant that helps answer questions about data pipelines and schemas, using both a fixed knowledge base and whatever files you upload at it (CSV, JSON, Excel, or raw SQL).
+A RAG-based assistant that helps answer questions about data pipelines and schemas, using both a fixed knowledge base and whatever files you upload at it (CSV, JSON, Excel, or raw SQL).
 
 The idea started from a simple pain point: when you're designing a data pipeline, you're constantly flipping between company policy docs and your own dataset to check things like "does this column follow our naming convention?" or "what's the schema of this table?" This tool puts both in one chat window.
 <img width="940" height="398" alt="image" src="https://github.com/user-attachments/assets/704d9106-11f1-4201-879a-40c3dcb759a0" />
@@ -65,6 +65,3 @@ If you ask something totally unrelated to your data or the knowledge base (like 
 - The knowledge base is loaded and embedded once when the app starts, so keep `kb_docs/` populated before launch.
 - Vector stores are written to disk (`./kb_index` for the knowledge base, `./user_index/session_*` per upload session), so repeated runs won't need to re-embed the knowledge base every time.
 
-## Where this landed
-
-This was built and demoed as a prototype at the TCS AI Hackathon, where it received appreciation from the jury for the approach to hybrid retrieval and multi-format data ingestion.
